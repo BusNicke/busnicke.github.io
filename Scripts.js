@@ -172,7 +172,6 @@ function revealAllMines(){
     }    
 };
 
-
 function checkIfNeighborsIsEmpty(x, y){
     if(x-1 >= 0){
         if(gameBoard[x-1][y].mine === false && gameBoard[x-1][y].clicked === false)
