@@ -193,4 +193,3 @@ function checkIfNeighborsIsEmpty(x, y){
             CheckForMines(x+1, y);
     }
 };
-
