@@ -33,6 +33,7 @@ $(document).ready(function(){
         numberOfMines = checkNumberOfMines;
         $(".setUpGame").hide();
         CreateGameBoard(gameBoardWidthAndHeight.width, gameBoardWidthAndHeight.height);
+        LocalTime();
     });
 });
 
@@ -60,16 +61,16 @@ function CreateGameBoard(height, width){
 
 function StartTimer(){
     var doUpdate = function() {
-    $('#countdown').each(function() {
-      if (gameOver === false) {
-        timer++;
-        var minutes = Math.floor(timer / 60);
-        var seconds = timer % 60;
-        if(seconds < 10){
-            seconds = 0 + seconds.toString();
+        $('#timer').each(function() {
+            if (gameOver === false) {
+                timer++;
+                var minutes = Math.floor(timer / 60);
+                var seconds = timer % 60;
+                if(seconds < 10){
+                    seconds = 0 + seconds.toString();
+                }
+            $(this).html("Time:" + minutes + ":" + seconds);
         }
-        $(this).html("Time:" + minutes + ":" + seconds);
-      }
     });
   };
 
@@ -290,26 +291,48 @@ function revealAllMines(){
     }    
 };
 
-function checkIfNeighborsIsEmpty(x, y){
-    if(x-1 >= 0){
-        if(gameBoard[x-1][y].mine === false && gameBoard[x-1][y].clicked === false)
-            CheckForMines(x-1, y);
+function checkIfNeighborsIsEmpty(i, j){   
+     
+    if(i-1 >= 0 && j-1 >= 0){
+        if(gameBoard[i-1][j-1].mine === false && gameBoard[i-1][j-1].clicked === false)
+            CheckForMines(i-1, j-1);
     }
         
-    if(y-1 >= 0){
-        if(gameBoard[x][y-1].mine === false && gameBoard[x][y-1].clicked === false)
-            CheckForMines(x, y-1);
+    if(i-1 >= 0){
+        if(gameBoard[i-1][j].mine === false && gameBoard[i-1][j].clicked === false)
+            CheckForMines(i-1, j);
     }
         
-    if(y+1 < gameBoardWidthAndHeight.height){
-        if(gameBoard[x][y+1].mine === false && gameBoard[x][y+1].clicked === false)
-            CheckForMines(x, y+1);
+    if(i-1 >= 0 && j+1 < gameBoardWidthAndHeight.width){
+        if(gameBoard[i-1][j+1].mine === false && gameBoard[i-1][j+1].clicked === false)
+            CheckForMines(i-1, j+1);
     }
         
-    if(x+1 < gameBoardWidthAndHeight.width){
-        if(gameBoard[x+1][y].mine === false && gameBoard[x+1][y].clicked === false)
-            CheckForMines(x+1, y);
+    if(j-1 >= 0){
+        if(gameBoard[i][j-1].mine === false && gameBoard[i][j-1].clicked === false)
+            CheckForMines(i, j-1);
     }
+        
+    if(j+1 < gameBoardWidthAndHeight.width){
+        if(gameBoard[i][j+1].mine === false && gameBoard[i][j+1].clicked === false)
+            CheckForMines(i, j+1);
+    }
+        
+    if(i+1 < gameBoardWidthAndHeight.height && j-1 >= 0){
+        if(gameBoard[i+1][j-1].mine === false && gameBoard[i+1][j-1].clicked === false)
+            CheckForMines(i+1, j-1);
+    }
+        
+    if(i+1 < gameBoardWidthAndHeight.height){
+        if(gameBoard[i+1][j].mine === false && gameBoard[i+1][j].clicked === false)
+            CheckForMines(i+1, j);
+    }
+        
+    if(i+1 < gameBoardWidthAndHeight.height && j+1 < gameBoardWidthAndHeight.width){
+        if(gameBoard[i+1][j+1].mine === false && gameBoard[i+1][j+1].clicked === false)
+            CheckForMines(i+1, j+1);
+    }   
+    
 };
 
 function checkWinningCondition(){
