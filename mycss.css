@@ -1,6 +1,11 @@
 .center{
+    width: 100%;
     margin: auto;
-    width: 60%;
+}
+
+#canvas{
+    width: 100%;
+    margin: auto;
 }
 
 .box{
@@ -9,13 +14,14 @@
     width:20px;
     align-content: center;
     font-size: 12px;
-    float: right;
+    float: left;
     border-style: outset;
+    border-color: #e6e6e6;
 }
 
 .clicked{
     background-color: lightgray;
-    border: 1px;
+    border: 0.5px;
     border-style: solid;
     border-color: gray;
 }
@@ -39,54 +45,63 @@ input{
     color: black;
 }
 
-.numberBoxOne{
+.flag{
+    align-content: center;
+    color: red !important;
+}
+
+
+
+
+
+
+
+
+.numberBox1{
     color: blue;
     font-weight: bold;
     text-align: center;
 }
 
-.numberBoxTwo{
+.numberBox2{
     color: green;
     font-weight: bold;
     text-align: center;
 }
 
-.numberBoxThree{
+.numberBox3{
     color: red;
     font-weight: bold;
     text-align: center;
 }
 
-.numberBoxFour{
+.numberBox4{
     color: darkblue;
     font-weight: bold;
     text-align: center;
 }
 
-.numberBoxFive{
+.numberBox5{
     color: darkred;
     font-weight: bold;
     text-align: center;
 }
 
-.numberBoxSix{
+.numberBox6{
     color: turquoise;
     font-weight: bold;
     text-align: center;
 }
 
-.numberBoxSeven{
+.numberBox7{
     color: purple;
     font-weight: bold;
     text-align: center;
 }
 
-.numberBoxEight{
+.numberBox8{
     color: black;
     font-weight: bold;
     text-align: center;
 }
 
-.flag{
-    color: blue;
-}

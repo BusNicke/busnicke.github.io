@@ -12,19 +12,22 @@
         <title>Minesweeper</title>
     </head>
     <body>
-        <div class="center" id="canvas">
+        <h3 id="win"></h3>
+        <div class="center" id="canvas" style="width: 40%">
+            <p id="countdown">Time: 0:00</p>
+            <p id="minesLeft">Mines Left: </p>
         </div>
         <br>
-        <div class="center" style="width: 20%">
+        <div class="center setUpGame" style="width: 40%">
             <label for="height">Height:</label>
             <input type="text" class="form-control" id="height" value="10">
-            
+            <br>
             <label for="width">Width:</label>
             <input type="text" class="form-control" id="width" value="10">
-            
+            <br>
             <label for="numberOfMines">Number of mines:</label>
             <input type="text" class="form-control" id="numberOfMines" value="5">
-
+            <br>
             <button id="startGame" class="btn btn-default"><span>Start</span></button>
         </div>
     </body>
