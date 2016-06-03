@@ -81,7 +81,7 @@ function ActivateFlagPressing(){
     $(".box").mousedown(function(ev){
         
         var id = $(this).prop("id").split("t");
-        if(ev.which == 3)
+        if(ev.which == 3 && gameOver === false)
         {
             if(gameBoard[id[0]][id[1]].flag === true){
                 $(this).removeClass("fa fa-flag flag");
@@ -98,7 +98,7 @@ function ActivateFlagPressing(){
                 }
             } 
         }
-        if(ev.which == 2){
+        if(ev.which == 2 && gameOver === false){
             //alert("middlemouse");
             CheckNeighborsForFlags(id[0], id[1]);
         }
