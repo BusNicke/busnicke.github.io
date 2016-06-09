@@ -1658,7 +1658,7 @@
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
-		appearance: none;
+		/*appearance: none;*/
 		background: rgba(255, 255, 255, 0.075);
 		border-radius: 4px;
 		border: none;
@@ -1739,7 +1739,7 @@
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
-		appearance: none;
+		/*appearance: none;*/
 		display: block;
 		float: left;
 		margin-right: -2em;
@@ -2209,7 +2209,7 @@
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
-		appearance: none;
+		/*appearance: none;*/
 		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
