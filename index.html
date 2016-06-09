@@ -12,13 +12,12 @@
         <title>Minesweeper</title>
     </head>
     <body>
-        <div class="center" id="canvas" style="width: 40%">
-            <h3 id="win"></h3>
+        <div class="center col-md-6 col-md-offset-3" id="canvas" style="width: 40%">
             <p id="timer">Time: 0:00</p>
             <p id="minesLeft">Mines Left: </p>
         </div>
         <br>
-        <div class="center setUpGame" style="width: 40%">
+        <div class="center setUpGame col-md-6 col-md-offset-3">
             <label for="height">Height:</label>
             <input type="text" class="form-control" id="height" value="10">
             <br>
@@ -30,5 +29,6 @@
             <br>
             <button id="startGame" class="btn btn-default"><span>Start</span></button>
         </div>
+        <h3 id="result" class="col-md-6 col-md-offset-3"></h3>
     </body>
 </html>

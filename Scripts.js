@@ -263,6 +263,8 @@ function CheckForMines(x, y){
             if(gameBoard[x][y].mine === true){
                 $("#" + x +"t"+ y).addClass("clickedMine fa fa-bomb");
                 revealAllMines();
+                $("#result").addClass("lost");
+                $("#result").text("You Lost..");
                 gameOver = true;
             }
             
@@ -345,7 +347,8 @@ function checkWinningCondition(){
     }
     
     if(win === true){
-        $("#win").text("You WON!");
+        $("#result").addClass("win");
+        $("#result").text("You WON!");
         gameOver = true;
     }
 };
