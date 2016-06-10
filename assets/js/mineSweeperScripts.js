@@ -9,14 +9,17 @@ var timer = 0;
 var numberOfMines = 0;
 var gameBoard;
 var gameBoardWidthAndHeight;
-var gameOver = false;
+var gameOver;
 var numberOfFlags = 0;
 
 $(document).ready(function(){
+    StartTimer();
     $("#startGame").click(function(){
+        $("#restartGame").prop("hidden", false);
         var widthInput = $("#width").val();
         var heightInput = $("#height").val();
         var checkNumberOfMines = $("#numberOfMines").val();
+        gameOver = false
         
         if(widthInput > 26)
             widthInput = 26;
@@ -33,7 +36,26 @@ $(document).ready(function(){
         numberOfMines = checkNumberOfMines;
         $(".setUpGame").hide();
         CreateGameBoard(gameBoardWidthAndHeight.width, gameBoardWidthAndHeight.height);
-        LocalTime();
+    });
+    
+    $("#restartGame").click(function(){
+        
+        gameOver = true;
+        $(".setUpGame").show();
+        timer = 0;
+        numberOfMines = 0;
+        numberOfFlags = 0;
+        gameBoard = null;
+        gameBoardWidthAndHeight = null;
+        
+        $("#result").text("");
+        
+        var node = document.getElementById("printBoard");
+        while (node.firstChild){
+            node.removeChild(node.firstChild);
+        }
+        
+        $("#restartGame").prop("hidden", true);
     });
 });
 
@@ -45,19 +67,18 @@ function CreateGameBoard(height, width){
         gameBoard[i] = new Array(height);
     
     for(var i = 0; i < width; i++){
-        $(".printBoard").append("<div class='row" + i + "'></div>")
+        $("#printBoard").append("<div class='row" + i + "'></div>")
         
         for(var j = 0; j < height; j++){
             $(".row"+ i).append("<div class='box' id='"+ i + "t" + j +"' onClick='CheckForMines(" + i + ", " + j + ")'></div>");           
             gameBoard[i][j] = new box(flag = false, mine = false, clicked = false, neighborsWithMine = 0);
         }
-        $(".printBoard").append("<br />")
+        $("#printBoard").append("<br />")
     }
     AssignMines();
     CheckNeighborsWithMines();
     UpdateMinesLeft();
     ActivateFlagPressing();
-    StartTimer();
 };
 
 function StartTimer(){

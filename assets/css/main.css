@@ -2711,6 +2711,13 @@ input{
 	float: right;
 }
 
+#restartGame{
+    width:auto;
+	background-color: #ff496e;
+	color: white;
+	float: right;
+}
+
 .flag{
     align-content: center;
     color: red !important;
