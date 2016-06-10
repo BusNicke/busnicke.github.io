@@ -84,28 +84,30 @@ function StartTimer(){
 
 function ActivateFlagPressing(){
     $(".box").mousedown(function(ev){
-        
-        var id = $(this).prop("id").split("t");
-        if(ev.which == 3 && gameOver === false)
-        {
-            if(gameBoard[id[0]][id[1]].flag === true){
-                $(this).removeClass("fa fa-flag flag");
-                gameBoard[id[0]][id[1]].flag = false;
-                numberOfFlags--;
-                UpdateMinesLeft();
-            }
-            else{
-                if(gameBoard[id[0]][id[1]].clicked === false){
-                    gameBoard[id[0]][id[1]].flag = true;
-                    $(this).addClass("fa fa-flag flag");
-                    numberOfFlags++;
-                    UpdateMinesLeft(); 
+        if(gameOver === false){
+            var id = $(this).prop("id").split("t");
+            if(ev.which == 3)
+            {
+                if(gameBoard[id[0]][id[1]].flag === true){
+                    $(this).removeClass("fa fa-flag flag");
+                    gameBoard[id[0]][id[1]].flag = false;
+                    numberOfFlags--;
+                    UpdateMinesLeft();
                 }
-            } 
-        }
-        if(ev.which == 2 && gameOver === false){
-            //alert("middlemouse");
-            CheckNeighborsForFlags(id[0], id[1]);
+                else{
+                    if(gameBoard[id[0]][id[1]].clicked === false){
+                        gameBoard[id[0]][id[1]].flag = true;
+                        $(this).addClass("fa fa-flag flag");
+                        numberOfFlags++;
+                        UpdateMinesLeft(); 
+                    }
+                } 
+            }
+            if(ev.which == 2){
+                //alert("middlemouse");
+                ev.preventDefault();
+                CheckNeighborsForFlags(id[0], id[1]);
+            }
         }
     });
 };

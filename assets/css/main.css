@@ -17,6 +17,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
+		color: #ffffff;
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -1433,7 +1434,7 @@
 		font-family: "Source Sans Pro", Helvetica, sans-serif !important;
 		font-size: 13pt !important;
 		font-weight: 200 !important;
-		line-height: 1.65 !important;
+		line-height: 1.65;
 	}
 
 		@media screen and (max-width: 1280px) {
@@ -2645,6 +2646,7 @@
 
 .text{
 	font-weight: 900;
+	color: inherit !important;
 }
 
 .box{
@@ -2657,6 +2659,7 @@
     width:20px;
     border-style: outset;
     font-family: Arial, Helvetica, sans-serif;
+	line-height: 1.5;
     
     border-color: dodgerblue;
 }
@@ -2698,16 +2701,20 @@ input{
     text-align: center;    
     color: black;
 	align-content: center;
+	line-height: 1.6 !important;
 }
 
 #startGame{
     width:auto;
-    color: black !important;
+	background-color: #ff496e;
+	color: white;
+	float: right;
 }
 
 .flag{
     align-content: center;
     color: red !important;
+	line-height: 1.2 !important;
 }
 
 
@@ -2757,4 +2764,8 @@ input{
     color: black;
     font-weight: bold;
     text-align: center;
+}
+
+.input{
+	width: 50vh;
 }
