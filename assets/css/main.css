@@ -2769,3 +2769,28 @@ input{
 .input{
 	width: 50vh;
 }
+
+/*div.center
+{
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}*/
+
+.center { /* This is the item to center... */
+  display: inline-block;
+}
+
+#MineSweeper { /* ...and this is its parent container. */
+  text-align: center;
+}
+
+.tooltip > .tooltip-inner {
+background-color: purple;
+}
+
+.tooltip > .tooltip-arrow { 
+border-bottom-color: purple !important; 
+}

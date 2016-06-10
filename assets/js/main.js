@@ -52,6 +52,10 @@ function ActivateMineSweeper(){
 	$("#MineSweeper").prop("hidden", !$("#MineSweeper").prop("hidden"));
 	
 	if ($("#MineSweeper").is(':visible')) {
-     	$("html, body").animate({scrollTop: $("#MineSweeper").offset().top});
+     	$("html, body").animate({scrollTop: $("#MineSweeper").offset().top -150});
   	}
 }
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});

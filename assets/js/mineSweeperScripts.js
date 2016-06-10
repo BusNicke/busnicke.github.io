@@ -45,12 +45,8 @@ function CreateGameBoard(height, width){
         gameBoard[i] = new Array(height);
     
     for(var i = 0; i < width; i++){
-        if(width <= 15){
-            $(".printBoard").append("<div class='row" + i + "  col-sm-6 col-sm-offset-3'></div>")
-        }
-        else{
-            $(".printBoard").append("<div class='row" + i + "  col-sm-10 col-sm-offset-1'></div>")
-        }
+        $(".printBoard").append("<div class='row" + i + "'></div>")
+        
         for(var j = 0; j < height; j++){
             $(".row"+ i).append("<div class='box' id='"+ i + "t" + j +"' onClick='CheckForMines(" + i + ", " + j + ")'></div>");           
             gameBoard[i][j] = new box(flag = false, mine = false, clicked = false, neighborsWithMine = 0);
