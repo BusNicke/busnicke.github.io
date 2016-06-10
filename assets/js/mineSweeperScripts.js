@@ -18,10 +18,10 @@ $(document).ready(function(){
         var heightInput = $("#height").val();
         var checkNumberOfMines = $("#numberOfMines").val();
         
-        if(widthInput > 35)
-            widthInput = 35;
-        if(heightInput > 35)
-            heightInput = 35;
+        if(widthInput > 26)
+            widthInput = 26;
+        if(heightInput > 26)
+            heightInput = 26;
             
         gameBoardWidthAndHeight = {
         width: widthInput,
@@ -45,7 +45,12 @@ function CreateGameBoard(height, width){
         gameBoard[i] = new Array(height);
     
     for(var i = 0; i < width; i++){
-        $(".printBoard").append("<div class='row" + i + "  col-sm-6 col-sm-offset-3'></div>")
+        if(width <= 15){
+            $(".printBoard").append("<div class='row" + i + "  col-sm-6 col-sm-offset-3'></div>")
+        }
+        else{
+            $(".printBoard").append("<div class='row" + i + "  col-sm-10 col-sm-offset-1'></div>")
+        }
         for(var j = 0; j < height; j++){
             $(".row"+ i).append("<div class='box' id='"+ i + "t" + j +"' onClick='CheckForMines(" + i + ", " + j + ")'></div>");           
             gameBoard[i][j] = new box(flag = false, mine = false, clicked = false, neighborsWithMine = 0);
@@ -73,7 +78,6 @@ function StartTimer(){
         }
     });
   };
-
   setInterval(doUpdate, 1000);
 };
 
