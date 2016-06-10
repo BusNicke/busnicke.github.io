@@ -78,6 +78,7 @@ function StartTimer(){
         }
     });
   };
+  
   setInterval(doUpdate, 1000);
 };
 
